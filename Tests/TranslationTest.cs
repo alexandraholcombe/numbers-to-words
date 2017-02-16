@@ -18,5 +18,11 @@ namespace NumbersToWordsApp
       Translation testTranslation = new Translation();
       Assert.Equal("one", testTranslation.Translator(1));
     }
+    [Fact]
+    public void Translator_ForTwoDigitNumber_written_number()
+    {
+      Translation testTranslation = new Translation();
+      Assert.Equal("thirteen", testTranslation.Translator(13));
+    }
   }
 }
