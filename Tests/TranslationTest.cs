@@ -24,5 +24,11 @@ namespace NumbersToWordsApp
       Translation testTranslation = new Translation();
       Assert.Equal("thirteen", testTranslation.Translator(13));
     }
+    [Fact]
+    public void Translator_ForTwoDigitNumberNotCardinal_written_number()
+    {
+      Translation testTranslation = new Translation();
+      Assert.Equal("twenty two", testTranslation.Translator(22));
+    }
   }
 }
