@@ -12,5 +12,11 @@ namespace NumbersToWordsApp
       Translation testTranslation = new Translation();
       Assert.Equal("zero", testTranslation.Translator(0));
     }
+    [Fact]
+    public void Translator_ForSingleDigitNumber_written_number()
+    {
+      Translation testTranslation = new Translation();
+      Assert.Equal("one", testTranslation.Translator(1));
+    }
   }
 }
