@@ -49,13 +49,12 @@ namespace NumbersToWordsApp
       Array.Reverse(digitArray);
 
       List<string> finalNumberReversed = new List<string>{};
-
       for (int i = (digitArray.Length - 1); i >= 0; i--)
       {
         var thisDigit = (int)char.GetNumericValue(digitArray[i]);
         // var specialDigit = (int)char.GetNumericValue(digitArray[i-1]);
 
-        if (i == 1 && digitArray[i] == '1')
+        if (i == 1)
         {
           if (digitArray[i] == '1')
           {
@@ -64,13 +63,11 @@ namespace NumbersToWordsApp
             Console.WriteLine(justTens[allie]);
             finalNumberReversed.Add(justTens[allie]);
             Console.WriteLine("I GOT TO HERE");
-            foreach (string item in finalNumberReversed)
-            {
-              Console.WriteLine(item);
-            }
           }
           else
           {
+            Console.WriteLine("FOR " + userInput);
+            Console.WriteLine("FOR ONES PLACE");
             finalNumberReversed.Add(tensPlace[thisDigit]);
           }
         }
@@ -86,9 +83,14 @@ namespace NumbersToWordsApp
           }
         }
       }
+      Console.WriteLine("FOR " + userInput);
+      foreach (string item in finalNumberReversed)
+      {
+        Console.WriteLine(item);
+      }
 
       string[] fNRArray = finalNumberReversed.ToArray();
-      Array.Reverse(fNRArray);
+      // Array.Reverse(fNRArray);
       string result = string.Join(" ", fNRArray);
       return result;
     }
