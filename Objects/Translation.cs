@@ -60,27 +60,17 @@ namespace NumbersToWordsApp
           {
             char jiwon = digitArray[i-1];
             int allie = (int)char.GetNumericValue(jiwon);
-            Console.WriteLine(justTens[allie]);
             finalNumberReversed.Add(justTens[allie]);
-            Console.WriteLine("I GOT TO HERE");
+            break;
           }
           else
           {
-            Console.WriteLine("FOR " + userInput);
-            Console.WriteLine("FOR ONES PLACE");
             finalNumberReversed.Add(tensPlace[thisDigit]);
           }
         }
         else if (i == 0)
         {
-          if (digitArray[i+1] == '1')
-          {
-            continue;
-          }
-          else
-          {
             finalNumberReversed.Add(onesPlace[thisDigit]);
-          }
         }
       }
       Console.WriteLine("FOR " + userInput);
@@ -92,6 +82,7 @@ namespace NumbersToWordsApp
       string[] fNRArray = finalNumberReversed.ToArray();
       // Array.Reverse(fNRArray);
       string result = string.Join(" ", fNRArray);
+      Console.WriteLine(result);
       return result;
     }
   }
